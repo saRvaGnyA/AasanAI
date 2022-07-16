@@ -70,7 +70,7 @@
 
 ### **Flowchart of How the Model works!!**
 <div align="center">
-<img src = "https://user-images.githubusercontent.com/84740927/179347045-8acd4960-4ca0-4a40-9481-9ff97c168a4a.png">
+<img src = "https://user-images.githubusercontent.com/84740927/179351625-b1e0cc6c-e1f9-474a-bb59-7965b454b2cb.png">
 </div>
 
 ## 🔮Future Scope

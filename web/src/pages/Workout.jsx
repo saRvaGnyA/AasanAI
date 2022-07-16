@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import Webcam from "react-webcam";
+
 import { auth } from "../firebase-config";
 import Header from "../partials/Header";
+import Vrikshasan from "../images/vrikshasan.webp";
+import Utkatasan from "../images/utkatasan.gif";
+import Bhujangasan from "../images/bhujangasan.gif";
+import Svanasan from "../images/svanasan.gif";
 
 const Workout = () => {
+  const webcamRef = useRef(null);
+  const canvasRef = useRef(null);
+
   const [user, loading, error] = useAuthState(auth);
   const [tab, setTab] = useState(1);
 
@@ -100,6 +108,96 @@ const Workout = () => {
           </div>
         </div>
       </section>
+
+      <Webcam
+        width="640px"
+        height="480px"
+        id="webcam"
+        ref={webcamRef}
+        style={{
+          position: "absolute",
+          left: 20,
+          top: 125,
+          padding: "0px",
+        }}
+      />
+      <canvas
+        ref={canvasRef}
+        id="my-canvas"
+        width="640px"
+        height="480px"
+        style={{
+          position: "absolute",
+          left: 20,
+          top: 125,
+          zIndex: 1,
+        }}
+      ></canvas>
+
+      {tab === 1 && (
+        <div>
+          <img
+            src={Vrikshasan}
+            alt="Vrikshasan"
+            width="480px"
+            height="480px"
+            style={{
+              position: "absolute",
+              right: 40,
+              top: 125,
+              padding: "0px",
+            }}
+          />
+        </div>
+      )}
+      {tab === 2 && (
+        <div>
+          <img
+            src={Utkatasan}
+            alt="Utkatasan"
+            width="480px"
+            height="480px"
+            style={{
+              position: "absolute",
+              right: 40,
+              top: 125,
+              padding: "0px",
+            }}
+          />
+        </div>
+      )}
+      {tab === 3 && (
+        <div>
+          <img
+            src={Bhujangasan}
+            alt="Bhujangasan"
+            width="480px"
+            height="480px"
+            style={{
+              position: "absolute",
+              right: 40,
+              top: 125,
+              padding: "0px",
+            }}
+          />
+        </div>
+      )}
+      {tab === 4 && (
+        <div>
+          <img
+            src={Svanasan}
+            alt="Svanasan"
+            width="480px"
+            height="480px"
+            style={{
+              position: "absolute",
+              right: 40,
+              top: 125,
+              padding: "0px",
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };
