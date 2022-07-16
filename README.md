@@ -61,7 +61,9 @@
 - Tensorflow
 
 ## ⚙How the model works
-[Check out this Jupyter Notebook]()
+
+[Check out this Jupyter Notebook for detailed explanation and training process](https://github.com/saRvaGnyA/AasanAI/blob/main/model/Yoga-Pose-Detection.ipynb)  
+[Dataset Used from Kaggle](https://www.kaggle.com/datasets/niharika41298/yoga-poses-dataset)
 
 ## 🔮Future Scope
 
