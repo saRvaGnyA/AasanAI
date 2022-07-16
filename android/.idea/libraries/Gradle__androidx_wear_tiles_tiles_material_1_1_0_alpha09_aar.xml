@@ -4,8 +4,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />

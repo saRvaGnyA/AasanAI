@@ -93,8 +93,8 @@ class PoseClassifier(
                 cnt = cnt+1
             }
         }
-//        println("*************************${output}*****************************")
-//        println("@@@@@@@@@@@@@@@@@@@@@@@@@@${firebaseOutput}@@@@@@@@@@@@@@@@@@@@@@2")
+        println("*************************${output}*****************************")
+        println("@@@@@@@@@@@@@@@@@@@@@@@@@@${firebaseOutput}@@@@@@@@@@@@@@@@@@@@@@2")
         return output
     }
 
@@ -105,6 +105,7 @@ class PoseClassifier(
         }
         println(myMap)
         db.collection("workout").document(userEmail.toString()).collection(dateTimeAsLong.toString()).document("poses").set(myMap)
+//        db.collection("workout").document(userEmail.toString()).collection(dateTimeAsLong.toString()).document("poses").set(myMap)
 //        println("cccccccccccccccccccccccccccccccccc")
 //        println("${userEmail}")
         // conversion from int to date ===> val backToDate: Date = Date(dateTimeAsLong)
