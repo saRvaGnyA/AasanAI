@@ -54,6 +54,9 @@
 - Kotlin
 - TFLite
 
+#### Database and Authentication
+- Firebase
+
 #### Deep Learning
 - Tensorflow
 
