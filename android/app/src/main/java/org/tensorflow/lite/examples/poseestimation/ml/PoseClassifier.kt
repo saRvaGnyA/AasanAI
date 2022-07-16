@@ -17,9 +17,16 @@ limitations under the License.
 package org.tensorflow.lite.examples.poseestimation.ml
 
 import android.content.Context
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.poseestimation.data.Person
 import org.tensorflow.lite.support.common.FileUtil
+import java.lang.ref.PhantomReference
+import kotlin.reflect.typeOf
 
 class PoseClassifier(
     private val interpreter: Interpreter,
@@ -27,8 +34,10 @@ class PoseClassifier(
 ) {
     private val input = interpreter.getInputTensor(0).shape()
     private val output = interpreter.getOutputTensor(0).shape()
-    val firebaseOutput =   mutableListOf<Pair<String, Float>>()[5]
-
+    val userEmail = FirebaseAuth.getInstance().currentUser!!.email
+    val firebaseOutput =   mutableListOf<Pair<String, Float>>()
+//    private lateinit var databaseReference : DatabaseReference
+    val db = Firebase.firestore
 
     companion object {
         private const val MODEL_FILENAME = "classifier.tflite"
@@ -66,14 +75,34 @@ class PoseClassifier(
         outputTensor.forEachIndexed { index, score ->
             output.add(Pair(labels[index], score))
         }
-//        firebaseOutput = output
-
-        println(firebaseOutput.toString())
-        println("*************************${output}*****************************")
+        if(firebaseOutput.size==0){
+            for(ele in output){
+                firebaseOutput.add(ele)
+            }
+        }
+        else{
+            var cnt = 0
+            for(ele in output){
+                if(ele.second>firebaseOutput[cnt].second){
+                    firebaseOutput.set(cnt,ele)
+                }
+                cnt = cnt+1
+            }
+        }
+//        println("*************************${output}*****************************")
+//        println("@@@@@@@@@@@@@@@@@@@@@@@@@@${firebaseOutput}@@@@@@@@@@@@@@@@@@@@@@2")
         return output
     }
 
     fun close() {
+        val myMap = mutableMapOf<String, String>()
+        for(ele in firebaseOutput){
+            myMap[ele.first.toString()] = ele.second.toString()
+        }
+        println(myMap)
+        db.collection("workout").document(userEmail.toString()).collection("16").document("poses").set(myMap)
+//        println("cccccccccccccccccccccccccccccccccc")
+//        println("${userEmail}")
         interpreter.close()
     }
 }

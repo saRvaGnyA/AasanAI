@@ -79,6 +79,9 @@ dependencies {
     def nav_version = "2.5.0"
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

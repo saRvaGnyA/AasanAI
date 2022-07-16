@@ -73,7 +73,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="22dp"
         android:layout_marginRight="15dp"
-        android:text="Login" />
+
+        android:text="Login"
+        app:rippleColor="#9A1919" />
 
     <TextView
         android:id="@+id/noAccountTv"
