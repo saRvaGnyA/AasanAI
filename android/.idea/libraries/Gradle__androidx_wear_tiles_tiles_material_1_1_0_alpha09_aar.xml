@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.wear.tiles:tiles-material:1.1.0-alpha09@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c86f5f11a33e2cdb1d60c2e87d1c5f6a/transformed/jetified-tiles-material-1.1.0-alpha09/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.wear.tiles/tiles-material/1.1.0-alpha09/d3fe3128ddbeaa78c78e66f098709af828ad07a1/tiles-material-1.1.0-alpha09-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
