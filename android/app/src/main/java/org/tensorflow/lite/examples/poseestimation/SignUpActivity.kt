@@ -30,11 +30,11 @@ class SignUpActivity : AppCompatActivity() {
         binding= ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        actionBar=supportActionBar!!
-
-        actionBar.title="Sign Up"
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setDisplayShowHomeEnabled(true)
+//        actionBar=supportActionBar!!
+//
+//        actionBar.title="Sign Up"
+//        actionBar.setDisplayHomeAsUpEnabled(true)
+//        actionBar.setDisplayShowHomeEnabled(true)
 
         progressDialog= ProgressDialog(this)
         progressDialog.setTitle("Please wait")
@@ -43,23 +43,23 @@ class SignUpActivity : AppCompatActivity() {
 
         firebaseAuth=FirebaseAuth.getInstance()
 
-        binding.signUpButton.setOnClickListener{
+        binding.signUpBtn.setOnClickListener{
             validateData()
         }
     }
 
     private fun validateData() {
-        email=binding.EmailSU.text.toString().trim()
-        password=binding.PasswordSU.text.toString().trim()
+        email=binding.emailEtSU.text.toString().trim()
+        password=binding.passwordEtSU.text.toString().trim()
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            binding.EmailSUStatus.error="Invalid Email format"
+            binding.emailEtSU.error="Invalid Email format"
         }
         else if(TextUtils.isEmpty(password)){
-            binding.PasswordSUStatus.error="Please enter password"
+            binding.passwordEtSU.error="Please enter password"
         }
         else if(password.length<6){
-            binding.PasswordSUStatus.error="Password must be at least 6 characters long"
+            binding.passwordEtSU.error="Password must be at least 6 characters long"
         }
         else{
             firebaseSignUp()

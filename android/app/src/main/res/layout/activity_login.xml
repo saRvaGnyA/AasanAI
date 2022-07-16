@@ -12,10 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:text="Login"
+        android:textSize="34sp"
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/one"
         style="@style/TextAppearance.MaterialComponents.Headline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,9 +29,22 @@
         tools:ignore="MissingConstraints" />
 
     <!--    Email-->
+
+    <ImageView
+        android:id="@+id/gifs"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/one"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="106dp"
+        android:src="@drawable/aasan" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTil"
-        android:layout_above="@id/passwordTil"
+        android:layout_below="@id/gifs"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,10 +53,11 @@
         <EditText
             android:id="@+id/emailEt"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="15dp"
-            android:hint="Email"
+            android:hint="Enter email address"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
     <!--    Password-->
@@ -49,6 +66,7 @@
         app:passwordToggleEnabled="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/emailTil"
         android:layout_centerInParent="true"
         tools:ignore="MissingConstraints">
 
@@ -58,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:hint="Password"
+            android:hint="Enter the password"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,7 +91,10 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="22dp"
         android:layout_marginRight="15dp"
-        android:text="Login" />
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="Login"
+        android:textColor="@color/cardview_dark_background" />
 
     <TextView
         android:id="@+id/noAccountTv"
