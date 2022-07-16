@@ -8,7 +8,7 @@
 
 <div align="center">
    <strong>AasanAI</strong> - Your Personal Yoga Trainer<br>
-  DUHacks || Team Trojan Horse <br> <br>
+  DUHacks || Team Trojan Horse
 </div>
 <hr>
 
