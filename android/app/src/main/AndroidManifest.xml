@@ -16,12 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PoseEstimation">
         <activity
-<<<<<<< HEAD
             android:name=".AnalysisActivity"
             android:exported="false" />
         <activity
-            android:name=".MajorActivity"
-=======
             android:name=".DataActivity"
             android:exported="false" />
         <activity
@@ -29,7 +26,6 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
->>>>>>> 7056c76901f71420a4e10a8438a72868139d5971
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
