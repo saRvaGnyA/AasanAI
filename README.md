@@ -16,7 +16,7 @@
   <tr>
     <td>
       <strong>Theme:</strong> Healthcare, Open Innovation <br> <br>
-      <strong>AasanAI</strong> is a Deep Learning-powered Web and Mobile application to help you during your yoga workouts. <strong>AasanAI</strong> detects your Yogasana position and helps you perfect your posture by getting visual feedback. It uses a Posenet Model for classification of the yoga pose by detecting keypoints of the various body parts. <br> <br>
+      <strong>AasanAI</strong> is a Deep Learning-powered Web and Mobile application to help you during your yoga workouts. <strong>AasanAI</strong> detects your Yogasana position and helps you perfect your posture by getting visual feedback. It uses a Movenet Model for classification of the yoga pose by detecting keypoints of the various body parts. <br> <br>
       The <i>key features</i> of <strong>AasanAI</strong>:
       <ul>
         <li> Timer for each Aasana - A timer which keeps a track of your current and best times helps you gradually progress in your workout
@@ -25,7 +25,7 @@
       </ul>
       <br>
       
- Currently we recognize <i>4 yogasanas</i> using the Posenet Model:
+ Currently we recognize <i>4 yogasanas</i> using the Movenet Model:
       <ul>
         <li><a href = "https://en.wikipedia.org/wiki/Vrikshasana">Vrikshasana</a></li>
         <li><a href = "https://en.wikipedia.org/wiki/Utkatasana">Utkatasana</a></li>
