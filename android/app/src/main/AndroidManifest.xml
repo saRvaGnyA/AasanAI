@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PoseEstimation">
         <activity
+            android:name=".AnalysisActivity"
+            android:exported="false" />
+        <activity
             android:name=".DataActivity"
             android:exported="false" />
         <activity
