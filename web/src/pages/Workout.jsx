@@ -30,12 +30,14 @@ const Workout = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
       <Header></Header>
-      <div className="absolute pt-6 left-1/3">
-        <span className="mx-4 px-8">
+      <div className="absolute pt-6 right-1/2">
+        <span className="mx-4">
           Current Timer: <span className="text-red-600 font-bold">12s</span>
         </span>
-        <span className="mx-4 px-8">
-          Previous Best: <span className="text-green-600 font-bold">15s</span>
+      </div>
+      <div className="absolute pt-6 left-1/2">
+        <span className="mx-4">
+          Previous Best: <span className="text-green-600 font-bold">20s</span>
         </span>
       </div>
       <section className="relative">
