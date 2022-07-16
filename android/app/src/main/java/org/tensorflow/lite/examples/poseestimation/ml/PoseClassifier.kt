@@ -26,6 +26,8 @@ import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.poseestimation.data.Person
 import org.tensorflow.lite.support.common.FileUtil
 import java.lang.ref.PhantomReference
+import java.time.LocalDateTime
+import java.util.*
 import kotlin.reflect.typeOf
 
 class PoseClassifier(
@@ -38,6 +40,8 @@ class PoseClassifier(
     val firebaseOutput =   mutableListOf<Pair<String, Float>>()
 //    private lateinit var databaseReference : DatabaseReference
     val db = Firebase.firestore
+    val dateTime: Date = Calendar.getInstance().time
+    val dateTimeAsLong: Long = dateTime.time
 
     companion object {
         private const val MODEL_FILENAME = "classifier.tflite"
@@ -100,9 +104,10 @@ class PoseClassifier(
             myMap[ele.first.toString()] = ele.second.toString()
         }
         println(myMap)
-        db.collection("workout").document(userEmail.toString()).collection("16").document("poses").set(myMap)
+        db.collection("workout").document(userEmail.toString()).collection(dateTimeAsLong.toString()).document("poses").set(myMap)
 //        println("cccccccccccccccccccccccccccccccccc")
 //        println("${userEmail}")
+        // conversion from int to date ===> val backToDate: Date = Date(dateTimeAsLong)
         interpreter.close()
     }
 }
