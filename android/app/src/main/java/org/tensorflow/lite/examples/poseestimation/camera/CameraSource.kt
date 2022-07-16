@@ -192,6 +192,8 @@ class CameraSource(
             if (this.classifier != null) {
                 this.classifier?.close()
                 this.classifier = null
+//                println("***********************************1*****************************************************")
+                println(this.classifier.toString())
             }
             this.classifier = classifier
         }
@@ -202,6 +204,7 @@ class CameraSource(
      */
     fun setTracker(trackerType: TrackerType) {
         isTrackerEnabled = trackerType != TrackerType.OFF
+//        println("******************************************2**********************************************")
         (this.detector as? MoveNetMultiPose)?.setTracker(trackerType)
     }
 
@@ -212,6 +215,7 @@ class CameraSource(
         fpsTimer?.scheduleAtFixedRate(
             object : TimerTask() {
                 override fun run() {
+//                    println("*****************************************${frameProcessedInOneSecondInterval}***********************************************")
                     framesPerSecond = frameProcessedInOneSecondInterval
                     frameProcessedInOneSecondInterval = 0
                 }

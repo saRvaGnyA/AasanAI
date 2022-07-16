@@ -27,6 +27,8 @@ class PoseClassifier(
 ) {
     private val input = interpreter.getInputTensor(0).shape()
     private val output = interpreter.getOutputTensor(0).shape()
+    val firebaseOutput =   mutableListOf<Pair<String, Float>>()[5]
+
 
     companion object {
         private const val MODEL_FILENAME = "classifier.tflite"
@@ -64,6 +66,10 @@ class PoseClassifier(
         outputTensor.forEachIndexed { index, score ->
             output.add(Pair(labels[index], score))
         }
+//        firebaseOutput = output
+
+        println(firebaseOutput.toString())
+        println("*************************${output}*****************************")
         return output
     }
 
