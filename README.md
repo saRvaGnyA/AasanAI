@@ -26,6 +26,7 @@
 - [Devfolio Submission]()
 - [Hosted Website Link]()
 - [APK Link]()
+- [Jupyter Notebook for the Model]()
 
 ## 🤖Tech-Stack
 
