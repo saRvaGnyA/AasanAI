@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileActivity">
+
+
+    <activity
+        android:id="@+id/homePageActivity"
+        android:name="org.tensorflow.lite.examples.poseestimation.HomePageActivity"
+        android:label="activity_home_page"
+        tools:layout="@layout/activity_home_page" />
+    <activity
+        android:id="@+id/dataActivity"
+        android:name="org.tensorflow.lite.examples.poseestimation.DataActivity"
+        android:label="activity_data"
+        tools:layout="@layout/activity_data" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="org.tensorflow.lite.examples.poseestimation.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="org.tensorflow.lite.examples.poseestimation.ProfileActivity"
+        android:label="activity_profile"
+        tools:layout="@layout/activity_profile" />
+</navigation>

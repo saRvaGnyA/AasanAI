@@ -184,6 +184,7 @@ class MainActivity : AppCompatActivity() {
 
     // open camera
     private fun openCamera() {
+
         if (isCameraPermissionGranted()) {
             if (cameraSource == null) {
                 cameraSource =
@@ -196,6 +197,8 @@ class MainActivity : AppCompatActivity() {
                             personScore: Float?,
                             poseLabels: List<Pair<String, Float>>?
                         ) {
+//                            println("********************************************************************************************************************************")
+//                            println(poseLabels)
                             tvScore.text = getString(R.string.tfe_pe_tv_score, personScore ?: 0f)
                             poseLabels?.sortedByDescending { it.second }?.let {
                                 tvClassificationValue1.text = getString(

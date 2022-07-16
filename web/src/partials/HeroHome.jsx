@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function HeroHome() {
   return (
@@ -61,20 +62,20 @@ function HeroHome() {
                 data-aos-delay="300"
               >
                 <div>
-                  <a
+                  <Link
                     className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
-                    href="#0"
+                    to="/workout"
                   >
                     Start Workout
-                  </a>
+                  </Link>
                 </div>
                 <div>
-                  <a
+                  <Link
                     className="btn text-white bg-yellow-700 hover:bg-yellow-800 w-full sm:w-auto sm:ml-4"
-                    href="#0"
+                    to="/tutorial"
                   >
                     Learn How To Use
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
