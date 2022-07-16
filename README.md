@@ -65,8 +65,13 @@
 [Check out this Jupyter Notebook for detailed explanation and training process](https://github.com/saRvaGnyA/AasanAI/blob/main/model/Yoga-Pose-Detection.ipynb)  
 [Dataset Used from Kaggle](https://www.kaggle.com/datasets/niharika41298/yoga-poses-dataset)
 
-### **Movenet Architecture**
+### **MoveNet Architecture**
 ![image](https://user-images.githubusercontent.com/84740927/179345392-908fdde3-d9c7-4e61-84f3-2d0dc9946836.png)
+
+### **Flowchart of How the Model works!!**
+<div align="center">
+<img src = "https://user-images.githubusercontent.com/84740927/179347045-8acd4960-4ca0-4a40-9481-9ff97c168a4a.png">
+</div>
 
 ## 🔮Future Scope
 
