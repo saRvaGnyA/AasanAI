@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { setDoc, doc } from "@firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Webcam from "react-webcam";
 import * as poseDetection from "@tensorflow-models/pose-detection";
@@ -127,40 +128,23 @@ const Workout = () => {
         setBest4(timeDiff);
       }
       data = {
-        [ts]: {
-          poses: {
-            tree: String(best1),
-            chair: String(best2),
-            cobra: String(best3),
-            dog: String(best4),
-            warrior: "0",
-          },
-        },
+        tree: String(best1),
+        chair: String(best2),
+        cobra: String(best3),
+        dog: String(best4),
+        warrior: "0",
       };
       console.log(data);
+      upd();
     }
   }, [currentTime]);
 
   const upd = async () => {
-    await setDoc(doc(db, "workout", user.email), {
-      [ts]: {
-        poses: {
-          tree: "001",
-          chair: "001",
-          cobra: "001",
-          dog: "001",
-          warrior: "0",
-        },
-      },
-    });
+    await setDoc(doc(db, `workout/${user.email}/${ts}/poses`), data);
   };
 
   useEffect(() => {
-    // upd();
-  }, []);
-
-  useEffect(() => {
-    // setCurrentTime(0);
+    setCurrentTime(0);
     setPoseTime(0);
     setBestPerform(0);
   }, [currentPose]);
@@ -311,8 +295,6 @@ const Workout = () => {
   };
 
   function startYoga() {
-    setStartingTime(0);
-    setCurrentTime(0);
     setIsStartPose(true);
     runMovenet();
   }
