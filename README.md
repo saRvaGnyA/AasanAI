@@ -38,7 +38,7 @@
 </table>
 
 ## Resources
-- [Demo Video]()
+- [Demo Video](https://youtu.be/ZzLv_ronULE)
 - [GitHub Repository](https://github.com/saRvaGnyA/AasanAI/)
 - [Devfolio Submission]()
 - [Hosted Website Link](https://aasan-ai.vercel.app/)
