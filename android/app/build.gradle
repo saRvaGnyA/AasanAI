@@ -90,6 +90,19 @@ dependencies {
     implementation 'com.androidplot:androidplot-core:1.2.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
 
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:21.0.3'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:21.0.3'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
 }
 apply plugin: 'com.google.gms.google-services'

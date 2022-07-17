@@ -140,7 +140,7 @@ const Workout = () => {
   }, [currentTime]);
 
   const upd = async () => {
-    await setDoc(doc(db, `workout/${user.email}/${ts}/poses`), data);
+    await setDoc(doc(db, `workout/${user.email}/poses/${ts}`), data);
   };
 
   useEffect(() => {
