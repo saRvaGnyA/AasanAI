@@ -105,19 +105,19 @@ class PoseClassifier(
         val finalDateTime: Date = Calendar.getInstance().time
         val finalDateTimeAsLong: Long = finalDateTime.time
         var diff = (finalDateTimeAsLong-dateTimeAsLong)/1000
-        val myMap = mutableMapOf<String, String>()
+        val myMap = mutableMapOf<String, Long>()
         println("%%%%%%%%%%%%%%%%%%%%%${dateTimeAsLong}%%%%%%%%%${finalDateTimeAsLong}%%%%%%%%%%%%%%5")
         for(ele in firebaseOutput){
             if(ele.second>=0.5){
-                myMap[ele.first.toString()] = diff.toString()
+                myMap[ele.first.toString()] = diff
             }
             else{
-                myMap[ele.first.toString()] = "0.0"
+                myMap[ele.first.toString()] = 0
             }
 
         }
         println(myMap)
-        db.collection("workout").document(userEmail.toString()).collection(dateTimeAsLong.toString()).document("poses").set(myMap)
+        db.collection("workout").document(userEmail.toString()).collection("poses").document(dateTimeAsLong.toString()).set(myMap)
 //        db.collection("workout").document(userEmail.toString()).collection(dateTimeAsLong.toString()).document("poses").set(myMap)
 //        println("cccccccccccccccccccccccccccccccccc")
 //        println("${userEmail}")
