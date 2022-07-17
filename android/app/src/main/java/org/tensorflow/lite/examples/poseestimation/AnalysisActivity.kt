@@ -2,20 +2,20 @@ package org.tensorflow.lite.examples.poseestimation
 
 import android.content.ContentValues.TAG
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import com.androidplot.ui.DynamicTableModel
+import com.androidplot.ui.TableOrder
 import com.androidplot.xy.*
-import com.google.common.io.Files.append
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import java.text.FieldPosition
 import java.text.Format
 import java.text.ParsePosition
 import java.util.*
+
 
 class AnalysisActivity : AppCompatActivity() {
     fun append(arr: Array<Int>, element: Int): Array<Int> {
@@ -67,31 +67,34 @@ class AnalysisActivity : AppCompatActivity() {
                     val series3Number: Array<Long> = series3NumberList.toTypedArray()
                     val series4Number: Array<Long> = series4NumberList.toTypedArray()
                     val series5Number: Array<Long> = series5NumberList.toTypedArray()
-                    val series1 : XYSeries = SimpleXYSeries(Arrays.asList(*series1Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Cobra")
-                    val series2 : XYSeries = SimpleXYSeries(Arrays.asList(*series2Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Chair")
-                    val series3 : XYSeries = SimpleXYSeries(Arrays.asList(*series3Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Dog")
-                    val series4 : XYSeries = SimpleXYSeries(Arrays.asList(*series4Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Tree")
-                    val series5 : XYSeries = SimpleXYSeries(Arrays.asList(*series5Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Warrior")
-                    val series1Format = LineAndPointFormatter(Color.rgb(237, 0, 0),Color.BLACK,Color.argb(100,237,0,0),null)
-                    val series2Format = LineAndPointFormatter(Color.rgb(0, 87, 217),Color.BLACK,Color.argb(100,0, 87, 217),null)
-                    val series3Format = LineAndPointFormatter(Color.rgb(255, 255, 50),Color.BLACK,Color.argb(100,255, 255, 50),null)
-                    val series4Format = LineAndPointFormatter(Color.rgb(118, 220, 20),Color.BLACK,Color.argb(100,118, 220, 20),null)
-                    val series5Format = LineAndPointFormatter(Color.rgb(255, 139, 40),Color.BLACK,Color.argb(100,255, 139, 40),null)
+
+                    val series1 : XYSeries = SimpleXYSeries(Arrays.asList(*series1Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Bhujangasana")
+                    val series2 : XYSeries = SimpleXYSeries(Arrays.asList(*series2Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Utkatasana")
+                    val series3 : XYSeries = SimpleXYSeries(Arrays.asList(*series3Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Svanasana")
+                    val series4 : XYSeries = SimpleXYSeries(Arrays.asList(*series4Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Vrikshasana")
+//                    val series5 : XYSeries = SimpleXYSeries(Arrays.asList(*series5Number),SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,"Warrior")
+                    val series1Format = LineAndPointFormatter(Color.rgb(237, 0, 0),Color.BLACK,null,null)
+                    val series2Format = LineAndPointFormatter(Color.rgb(0, 87, 217),Color.BLACK,null,null)
+                    val series3Format = LineAndPointFormatter(Color.rgb(123, 61, 132),Color.BLACK,null,null)
+                    val series4Format = LineAndPointFormatter(Color.rgb(118, 220, 20),Color.BLACK,null,null)
+                    val series5Format = LineAndPointFormatter(Color.rgb(255, 139, 40),Color.BLACK,null,null)//123 61 132
                     series1Format.setInterpolationParams(CatmullRomInterpolator.Params(10,CatmullRomInterpolator.Type.Centripetal))
                     series2Format.setInterpolationParams(CatmullRomInterpolator.Params(10,CatmullRomInterpolator.Type.Centripetal))
                     series3Format.setInterpolationParams(CatmullRomInterpolator.Params(10,CatmullRomInterpolator.Type.Centripetal))
                     series4Format.setInterpolationParams(CatmullRomInterpolator.Params(10,CatmullRomInterpolator.Type.Centripetal))
-                    series5Format.setInterpolationParams(CatmullRomInterpolator.Params(10,CatmullRomInterpolator.Type.Centripetal))
+//                    series5Format.setInterpolationParams(CatmullRomInterpolator.Params(10,CatmullRomInterpolator.Type.Centripetal))
                     val plot = findViewById<XYPlot>(R.id.plot)
+                    plot.legend.tableModel = DynamicTableModel(2, 2, TableOrder.ROW_MAJOR)
                     plot.addSeries(series1,series1Format)
                     plot.addSeries(series2,series2Format)
                     plot.addSeries(series3,series3Format)
                     plot.addSeries(series4,series4Format)
-                    plot.addSeries(series5,series5Format)
+//                    plot.addSeries(series5,series5Format)
+
                     plot.graph.getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).format = object : Format(){
                         override fun format(p0: Any?, p1: StringBuffer?, p2: FieldPosition?): StringBuffer {
                             val i = Math.round((p0 as Number).toFloat())
-                            return p1!!.append(domainLabels[i])
+                            return p1!!.append(i)
                         }
                         override fun parseObject(p0: String?, p1: ParsePosition?): Any? {
                             return null
