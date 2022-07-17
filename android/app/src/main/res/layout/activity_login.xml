@@ -96,6 +96,7 @@
         android:text="Login"
         android:textColor="@color/cardview_dark_background" />
 
+
     <TextView
         android:id="@+id/noAccountTv"
         style="@style/TextAppearance.MaterialComponents.Caption"
