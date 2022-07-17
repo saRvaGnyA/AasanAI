@@ -40,7 +40,7 @@
 ## Resources
 - [Demo Video](https://youtu.be/ZzLv_ronULE)
 - [GitHub Repository](https://github.com/saRvaGnyA/AasanAI/)
-- [Devfolio Submission]()
+- [Devfolio Submission](https://devfolio.co/projects/aasanai-your-personal-yoga-trainer-2911)
 - [Hosted Website Link](https://aasan-ai.vercel.app/)
 - [APK Link](https://drive.google.com/file/d/1_9KDwIHznsWo5kW3VwEDmHa3ooFVGlZA/view?usp=sharing)
 
