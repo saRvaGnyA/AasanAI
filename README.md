@@ -41,7 +41,7 @@
 - [Demo Video]()
 - [GitHub Repository]()
 - [Devfolio Submission]()
-- [Hosted Website Link]()
+- [Hosted Website Link](https://aasan-ai.vercel.app/)
 - [APK Link]()
 
 ## 🤖Tech-Stack
