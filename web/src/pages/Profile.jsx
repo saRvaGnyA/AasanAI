@@ -32,7 +32,7 @@ function HeroHome() {
         ...doc.data(),
       };
     });
-    console.log(data);
+    console.log(data[data.length - 1].id);
   }
 
   return (
@@ -69,28 +69,39 @@ function HeroHome() {
 
               <ul class="hidden md:flex space-x-8 mb-4">
                 <li>
-                  <span class="font-semibold">20 </span>
-                  Days Streak
+                  <span class="font-semibold">{value && data.length} </span>
+                  Workouts
                 </li>
 
                 <li>
-                  <span class="font-semibold">15 </span>
-                  hours of Yoga
+                  <span class="font-semibold">
+                    {value &&
+                      (
+                        (data[data.length - 1].id - data[0].id) /
+                          (1000 * 60 * 60 * 24) +
+                        1
+                      ).toFixed(0)}{" "}
+                  </span>
+                  day(s) of Yoga
                 </li>
               </ul>
 
               <div class="hidden md:block">
-                <h1 class="font-semibold">Novice</h1>
-                <span>5 more days until Enthusiast</span>
+                <h1 class="font-semibold">
+                  {value && (data.length < 100 ? "Beginner" : "Novice")}
+                </h1>
+                <span>
+                  5 more days until <strong>Novice</strong>
+                </span>
               </div>
             </div>
           </section>
           {value && (
             <LineChart
-              width={730}
+              width={800}
               height={300}
               data={data}
-              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 0, right: 30, left: -33, bottom: 0 }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
@@ -103,10 +114,30 @@ function HeroHome() {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="chair" stroke="#8884d8" />
-              <Line type="monotone" dataKey="tree" stroke="#82ca9d" />
-              <Line type="monotone" dataKey="cobra" stroke="#b107e0" />
-              <Line type="monotone" dataKey="dog" stroke="#ff7300" />
+              <Line
+                type="monotone"
+                name="Vrikshasana"
+                dataKey="tree"
+                stroke="#82ca9d"
+              />
+              <Line
+                type="monotone"
+                name="Utkatasana"
+                dataKey="chair"
+                stroke="#8884d8"
+              />
+              <Line
+                type="monotone"
+                name="Bhujangasana"
+                dataKey="cobra"
+                stroke="#b107e0"
+              />
+              <Line
+                type="monotone"
+                name="Adho Mukha Svanasana"
+                dataKey="dog"
+                stroke="#ff7300"
+              />
             </LineChart>
           )}
         </div>
