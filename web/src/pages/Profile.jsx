@@ -1,10 +1,39 @@
 import React from "react";
 import Header from "../partials/Header";
+import {
+  LineChart,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Line,
+  CartesianGrid,
+} from "recharts";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase-config";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { collection } from "firebase/firestore";
+import { auth, db } from "../firebase-config";
 
 function HeroHome() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
+  const [value, loading, error] = useCollection(
+    collection(db, `workout/${user.email}/poses`),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+
+  let data;
+
+  if (value) {
+    data = value.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    });
+    console.log(data);
+  }
 
   return (
     <div className="relative">
@@ -56,6 +85,30 @@ function HeroHome() {
               </div>
             </div>
           </section>
+          {value && (
+            <LineChart
+              width={730}
+              height={300}
+              data={data}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey={(item) => {
+                  console.log(new Date(Number(item.id)));
+                  return new Date(Number(item.id));
+                }}
+                hide
+              />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="chair" stroke="#8884d8" />
+              <Line type="monotone" dataKey="tree" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="cobra" stroke="#b107e0" />
+              <Line type="monotone" dataKey="dog" stroke="#ff7300" />
+            </LineChart>
+          )}
         </div>
       </div>
     </div>
