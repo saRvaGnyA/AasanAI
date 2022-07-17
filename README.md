@@ -42,7 +42,7 @@
 - [GitHub Repository]()
 - [Devfolio Submission]()
 - [Hosted Website Link](https://aasan-ai.vercel.app/)
-- [APK Link]()
+- [APK Link](https://drive.google.com/file/d/1_9KDwIHznsWo5kW3VwEDmHa3ooFVGlZA/view?usp=sharing)
 
 ## 🤖Tech-Stack
 
