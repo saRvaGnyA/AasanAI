@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Harsh Nag"
+                android:text="Neel Shah"
                 android:textColor="#fff"
                 android:textSize="21sp"
                 android:textStyle="bold" />
