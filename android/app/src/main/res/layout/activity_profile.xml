@@ -52,21 +52,22 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.75"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Poses"
+                        android:text="Chair"
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/chairNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
-                        android:text="125"
+                        android:text="0"
                         android:textColor="@color/bottom_nav_selected_item"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -76,21 +77,22 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.75"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Followers"
+                        android:text="Tree"
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/treeNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
-                        android:text="1205"
+                        android:text="0"
                         android:textColor="@color/bottom_nav_selected_item"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -100,26 +102,53 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.75"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Following"
+                        android:text="Cobra"
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/cobraNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
-                        android:text="360"
+                        android:text="0"
                         android:textColor="@color/bottom_nav_selected_item"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dog"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/dogNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="0"
+                        android:textColor="@color/bottom_nav_selected_item"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

@@ -1,9 +1,13 @@
 package org.tensorflow.lite.examples.poseestimation
 
+import android.content.ContentValues
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.ActionBar
+import com.androidplot.xy.*
 import com.google.android.gms.tasks.Task
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
@@ -14,7 +18,11 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.Query
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.text.FieldPosition
+import java.text.Format
+import java.text.ParsePosition
 import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
@@ -31,10 +39,60 @@ class ProfileActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = Firebase.database.reference
 
-        database=FirebaseDatabase.getInstance().getReference("workout")
-        database.get().addOnCompleteListener {
+        val userEmail = FirebaseAuth.getInstance().currentUser!!.email
+        val db  = Firebase.firestore
+        val dataX = db.collection("workout").document(userEmail.toString()).collection("poses")//.collection("1658005950264").document("poses")
+        println("******************************************************************************************************************************************************************************")
+        var cnt = 0
 
-        }
+        val myMap = mutableMapOf<String, Long>()
+        dataX.get()
+            .addOnSuccessListener { documents ->
+                myMap["cobra"]=0
+                myMap["chair"]=0
+                myMap["dog"]=0
+                myMap["tree"]=0
+
+                for (document in documents) {
+                    val datePar = document.id.toLong()
+                    val backToDate: Date = Date(datePar)
+                    cnt = cnt+1
+
+                    if(document.get("cobra")!=0){
+                        val temp=myMap["cobra"];
+                        if (temp != null) {
+                            myMap["cobra"]= temp+1
+                        }
+                    }
+                    if(document.get("dog")!=0){
+                        val temp=myMap["dog"];
+                        if (temp != null) {
+                            myMap["dog"]= temp+1
+                        }
+                    }
+                    if(document.get("tree")!=0){
+                        val temp=myMap["tree"];
+                        if (temp != null) {
+                            myMap["tree"]= temp+1
+                        }
+                    }
+                    if(document.get("chair")!=0){
+                        val temp=myMap["chair"];
+                        if (temp != null) {
+                            myMap["chair"]= temp+1
+                        }
+                    }
+                }
+//                println("**********************************************"+myMap["cobra"])
+//                println("**********************************************"+myMap["chair"])
+//                println("**********************************************"+myMap["tree"])
+//                println("**********************************************"+myMap["dog"])
+                binding.cobraNo.text= myMap["cobra"].toString()
+                binding.chairNo.text= myMap["chair"].toString()
+                binding.dogNo.text= myMap["dog"].toString()
+                binding.treeNo.text= myMap["tree"].toString()
+
+            }
 
         checkUser()
         binding.logoutBtn.setOnClickListener{
