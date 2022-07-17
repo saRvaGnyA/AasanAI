@@ -39,7 +39,7 @@
 
 ## Resources
 - [Demo Video]()
-- [GitHub Repository]()
+- [GitHub Repository](https://github.com/saRvaGnyA/AasanAI/)
 - [Devfolio Submission]()
 - [Hosted Website Link](https://aasan-ai.vercel.app/)
 - [APK Link](https://drive.google.com/file/d/1_9KDwIHznsWo5kW3VwEDmHa3ooFVGlZA/view?usp=sharing)
