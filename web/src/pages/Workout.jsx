@@ -128,11 +128,11 @@ const Workout = () => {
         setBest4(timeDiff);
       }
       data = {
-        tree: String(best1),
-        chair: String(best2),
-        cobra: String(best3),
-        dog: String(best4),
-        warrior: "0",
+        tree: best1,
+        chair: best2,
+        cobra: best3,
+        dog: best4,
+        warrior: 0,
       };
       console.log(data);
       upd();
