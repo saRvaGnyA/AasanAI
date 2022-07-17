@@ -26,6 +26,8 @@ import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.examples.poseestimation.data.Person
 import org.tensorflow.lite.support.common.FileUtil
 import java.lang.ref.PhantomReference
+import java.time.LocalDateTime
+import java.util.*
 import kotlin.reflect.typeOf
 
 class PoseClassifier(
@@ -38,6 +40,8 @@ class PoseClassifier(
     val firebaseOutput =   mutableListOf<Pair<String, Float>>()
 //    private lateinit var databaseReference : DatabaseReference
     val db = Firebase.firestore
+    val dateTime: Date = Calendar.getInstance().time
+    val dateTimeAsLong: Long = dateTime.time
 
     companion object {
         private const val MODEL_FILENAME = "classifier.tflite"
@@ -61,6 +65,7 @@ class PoseClassifier(
 
     fun classify(person: Person?): List<Pair<String, Float>> {
         // Preprocess the pose estimation result to a flat array
+
         val inputVector = FloatArray(input[1])
         person?.keyPoints?.forEachIndexed { index, keyPoint ->
             inputVector[index * 3] = keyPoint.coordinate.y
@@ -75,34 +80,48 @@ class PoseClassifier(
         outputTensor.forEachIndexed { index, score ->
             output.add(Pair(labels[index], score))
         }
+
         if(firebaseOutput.size==0){
             for(ele in output){
                 firebaseOutput.add(ele)
             }
         }
         else{
+
             var cnt = 0
             for(ele in output){
-                if(ele.second>firebaseOutput[cnt].second){
+                if(ele.second>=0.97){
                     firebaseOutput.set(cnt,ele)
                 }
                 cnt = cnt+1
             }
         }
-//        println("*************************${output}*****************************")
-//        println("@@@@@@@@@@@@@@@@@@@@@@@@@@${firebaseOutput}@@@@@@@@@@@@@@@@@@@@@@2")
+        println("*************************${output}*****************************")
+        println("@@@@@@@@@@@@@@@@@@@@@@@@@@${firebaseOutput}@@@@@@@@@@@@@@@@@@@@@@2")
         return output
     }
 
     fun close() {
+        val finalDateTime: Date = Calendar.getInstance().time
+        val finalDateTimeAsLong: Long = finalDateTime.time
+        var diff = (finalDateTimeAsLong-dateTimeAsLong)/1000
         val myMap = mutableMapOf<String, String>()
+        println("%%%%%%%%%%%%%%%%%%%%%${dateTimeAsLong}%%%%%%%%%${finalDateTimeAsLong}%%%%%%%%%%%%%%5")
         for(ele in firebaseOutput){
-            myMap[ele.first.toString()] = ele.second.toString()
+            if(ele.second>=0.5){
+                myMap[ele.first.toString()] = diff.toString()
+            }
+            else{
+                myMap[ele.first.toString()] = "0.0"
+            }
+
         }
         println(myMap)
-        db.collection("workout").document(userEmail.toString()).collection("16").document("poses").set(myMap)
+        db.collection("workout").document(userEmail.toString()).collection(dateTimeAsLong.toString()).document("poses").set(myMap)
+//        db.collection("workout").document(userEmail.toString()).collection(dateTimeAsLong.toString()).document("poses").set(myMap)
 //        println("cccccccccccccccccccccccccccccccccc")
 //        println("${userEmail}")
+        // conversion from int to date ===> val backToDate: Date = Date(dateTimeAsLong)
         interpreter.close()
     }
 }

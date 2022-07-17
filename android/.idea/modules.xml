@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TFLite Pose Estimation.TFLite_Pose_Estimation.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TFLite Pose Estimation.TFLite_Pose_Estimation.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/TFLite_Pose_Estimation.iml" filepath="$PROJECT_DIR$/.idea/modules/TFLite_Pose_Estimation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TFLite_Pose_Estimation.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TFLite_Pose_Estimation.app.iml" />
     </modules>
   </component>
 </project>

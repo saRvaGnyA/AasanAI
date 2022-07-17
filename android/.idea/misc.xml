@@ -3,11 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+=======
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/drawable/bottom_nav_colors.xml" value="0.2" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/activity_analysis.xml" value="0.1" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/activity_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/activity_home_page.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/activity_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/fragment_data.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/fragment_practice.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Ananya/AndroidStudioProjects/AasanAI/android/app/src/main/res/menu/bottom_nav_menu.xml" value="1.7142857142857142" />
+>>>>>>> ef788bfb70d5d8afc9c04faf859a34dc93509ee3
         <entry key="..\:/Users/harsh/Desktop/Du Hack/examples/lite/examples/pose_estimation/android/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/harsh/Desktop/Du Hack/examples/lite/examples/pose_estimation/android/app/src/main/res/layout/activity_main.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/harsh/Desktop/Du Hack/examples/lite/examples/pose_estimation/android/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/Users/harsh/Desktop/Du Hack/examples/lite/examples/pose_estimation/android/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/Users/harsh/Desktop/Du Hack/examples/lite/examples/pose_estimation/android/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.21927083333333333" />
+<<<<<<< HEAD
         <entry key="..\:/Users/harsh/Desktop/Final DU/AasanAI/android/app/src/main/res/drawable-mdpi/ic_data.xml" value="0.1" />
         <entry key="..\:/Users/harsh/Desktop/Final DU/AasanAI/android/app/src/main/res/drawable-mdpi/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/harsh/Desktop/Final DU/AasanAI/android/app/src/main/res/drawable-mdpi/ic_practice.xml" value="0.1" />
@@ -29,6 +46,8 @@
         <entry key="..\:/Users/harsh/Desktop/Final DU/AasanAI/android/app/src/main/res/layout/activity_sign_up.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/harsh/Desktop/Final DU/AasanAI/android/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/harsh/Desktop/Final DU/AasanAI/android/app/src/main/res/menu/menu.xml" value="0.18541666666666667" />
+=======
+>>>>>>> ef788bfb70d5d8afc9c04faf859a34dc93509ee3
       </map>
     </option>
   </component>

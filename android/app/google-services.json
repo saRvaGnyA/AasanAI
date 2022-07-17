@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "196459694291",
+    "project_id": "aasanai",
+    "storage_bucket": "aasanai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196459694291:android:8f1b4ac6133ff2b44cec26",
+        "android_client_info": {
+          "package_name": "org.tensorflow.lite.examples.poseestimation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196459694291-a9d7hq2i7137movcd7kr1nh70do1ouca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7FJumVkzGMqeJLwyhhJIudsDqJvuNQ8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196459694291-a9d7hq2i7137movcd7kr1nh70do1ouca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
