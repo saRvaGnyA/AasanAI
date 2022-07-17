@@ -20,8 +20,8 @@
       The <i>key features</i> of <strong>AasanAI</strong>:
       <ul>
         <li> Timer for each Aasana - A timer which keeps a track of your current and best times helps you gradually progress in your workout
-        <li> Maintain your workout history - AasanAI maintains a history of your Yoga workout sessions thereby allowing you to improve gradually
-        <li> Participate in events and competitions - AasanAI aims to gamify this ecosystem to allow yoga events and competitions to take place virtually
+        <li> Maintain your workout history - AasanAI maintains a history of your Yoga workout sessions thereby allowing you to improve gradually. The history is saved on your account, allowing you to use either the web or the mobile application anytime as per your convenience.
+        <li> Participate in events and competitions - AasanAI aims to gamify this ecosystem to allow yoga events and competitions to take place virtually. This builds the basis for the future scope of this project and also opens a business potential.
       </ul>
       <br>
       
@@ -47,18 +47,19 @@
 ## 🤖Tech-Stack
 
 #### Web Development
-- ReactJS (using Vite)
-- TensorflowJS
+<a href="https://reactjs.org/" title="React"><img src="https://github.com/get-icon/geticon/raw/master/icons/react.svg" alt="" width="45px" height="45px"></a>
+<a href="https://www.tensorflow.org/" title="Tensorflow"><img src="https://github.com/get-icon/geticon/raw/master/icons/tensorflow.svg" alt="Tensorflow" width="45px" height="45px"></a>
 
 #### App Development
-- Kotlin
-- TFLite
+<a href="https://developer.android.com/" title="Android"><img src="https://github.com/get-icon/geticon/blob/master/icons/android.svg" alt="Android" width="120px" height="40px"></a>
+<a href="https://kotlinlang.org/" title="Kotlin"><img src="https://raw.githubusercontent.com/get-icon/geticon/fc0f660daee147afb4a56c64e12bde6486b73e39/icons/kotlin.svg" alt="Kotlin" width="85px" height="45px"></a>
+<a href="https://www.tensorflow.org/lite" title="TFLite"><img src="https://miro.medium.com/max/1400/1*-1bDV_6On3hvf80jVIeVRg.png" alt="TFLite" width="80px" height="40px"></a>
 
 #### Database and Authentication
-- Firebase
+<a href="https://firebase.google.com/" title="Firebase"><img src="https://github.com/get-icon/geticon/blob/master/icons/firebase.svg" alt="Firebase" width="45px" height="45px"></a>
 
 #### Deep Learning
-- Tensorflow
+<a href="https://www.tensorflow.org/" title="Tensorflow"><img src="https://github.com/get-icon/geticon/raw/master/icons/tensorflow.svg" alt="Tensorflow" width="45px" height="45px"></a>
 
 ## ⚙How the model works
 
@@ -73,8 +74,12 @@
 <img src = "https://user-images.githubusercontent.com/84740927/179351625-b1e0cc6c-e1f9-474a-bb59-7965b454b2cb.png">
 </div>
 
-## 🔮Future Scope
-
+## 🔮Future Scope and Business Potential
+- The model can be improved and more Yogasanas can be added - a daily Suryanamaskar regime can be introduced to the platform
+- We aim to gamify AasanAI to reward users for their workout streaks. This will include leaderboards and rankings based on the users' streaks and scores
+- We can introduce Yoga experts on the platform to help the users directly communicate with them. This can include a subscription model
+- Yoga events (like those on the International Yoga Day) can be hosted by experts on AasanAI without needing personal attention - they can make the use of user Aasana score to improve the Yoga event's reach. Sponsorships for such events also add to the business potential
+- Yoga competitions can be hosted on AasanAI with a fair and consistent scoring system
 
 ## 👨‍💻Team Members
 - [Sarvagnya Purohit](https://github.com/saRvaGnyA)
