@@ -8,7 +8,7 @@
 
 <div align="center">
    <strong>AasanAI</strong> - Your Personal Yoga Trainer, An ecosystem for Yogasanas<br>
-  DUHacks || Team Trojan Horse
+  DUHacks 4th Rank || Team Trojan Horse
 </div>
 <hr>
 
