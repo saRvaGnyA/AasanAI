@@ -11,6 +11,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import Workout from "./pages/Workout";
+import Tutorial from "./pages/Tutorial";
 
 function App() {
   const location = useLocation();
@@ -38,6 +39,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/workout" element={<Workout />} />
+        <Route path="/tutorial" element={<Tutorial />} />
       </Routes>
     </>
   );

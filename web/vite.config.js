@@ -19,11 +19,15 @@ export default defineConfig({
           return val.replace(/^~/, "");
         },
       },
+      {
+        find: 'fs',
+        replacement: 'memfs',
+      },
     ],
   },
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,
     }
-  } 
+  }
 })
