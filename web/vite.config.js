@@ -31,6 +31,7 @@ export default defineConfig({
   },
 
   build: {
+    outDir: './build',
     chunkSizeWarningLimit: 3200,
     commonjsOptions: {
 
