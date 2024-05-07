@@ -7,6 +7,10 @@ export default defineConfig({
   define: {
     'process.env': process.env
   },
+  server: {
+    port: 3000
+  },
+
   css: {
     postcss,
   },
@@ -25,8 +29,11 @@ export default defineConfig({
       },
     ],
   },
+
   build: {
+    chunkSizeWarningLimit: 3200,
     commonjsOptions: {
+
       transformMixedEsModules: true,
     }
   }
